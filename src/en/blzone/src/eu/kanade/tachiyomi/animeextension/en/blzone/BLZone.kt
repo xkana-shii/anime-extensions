@@ -426,11 +426,11 @@ class BLZone :
                     )
                     Log.d(
                         TAG,
-                        "P2P result [$index] Referer: ${video.headers["Referer"]}",
+                        "P2P result [$index] Referer: ${video.headers?.get("Referer")}",
                     )
                     Log.d(
                         TAG,
-                        "P2P result [$index] Origin: ${video.headers["Origin"]}",
+                        "P2P result [$index] Origin: ${video.headers?.get("Origin")}",
                     )
                 }
 
