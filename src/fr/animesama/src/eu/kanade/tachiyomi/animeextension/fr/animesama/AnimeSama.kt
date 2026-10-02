@@ -235,8 +235,7 @@ class AnimeSama :
         return animes.firstOrNull() ?: anime
     }
 
-    override fun animeDetailsParse(response: Response): SAnime =
-        throw UnsupportedOperationException()
+    override fun animeDetailsParse(response: Response): SAnime = throw UnsupportedOperationException()
 
     // ============================== Episodes ==============================
     override suspend fun getEpisodeList(anime: SAnime): List<SEpisode> {
@@ -272,8 +271,7 @@ class AnimeSama :
         }
     }
 
-    override fun episodeListParse(response: Response): List<SEpisode> =
-        throw UnsupportedOperationException()
+    override fun episodeListParse(response: Response): List<SEpisode> = throw UnsupportedOperationException()
 
     // ============================ Video Links =============================
     private val sibnetExtractor by lazy {
@@ -775,12 +773,11 @@ class AnimeSama :
         }
     }
 
-    private fun String.sanitizeDomain() =
-        trim()
-            .removeSuffix("/")
-            .ifBlank {
-                PREF_URL_DEFAULT
-            }
+    private fun String.sanitizeDomain() = trim()
+        .removeSuffix("/")
+        .ifBlank {
+            PREF_URL_DEFAULT
+        }
 
     private fun updateDomain(domain: String) {
         val newDomain = domain.sanitizeDomain()
