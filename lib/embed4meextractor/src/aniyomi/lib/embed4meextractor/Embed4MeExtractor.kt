@@ -192,11 +192,11 @@ class Embed4MeExtractor(
                     )
                     Log.d(
                         TAG,
-                        "HLS result [$index] Referer: ${video.headers["Referer"]}",
+                        "HLS result [$index] Referer: ${video.headers?.get("Referer")}",
                     )
                     Log.d(
                         TAG,
-                        "HLS result [$index] Origin: ${video.headers["Origin"]}",
+                        "HLS result [$index] Origin: ${video.headers?.get("Origin")}",
                     )
                 }
 
@@ -249,11 +249,11 @@ class Embed4MeExtractor(
             )
             Log.d(
                 TAG,
-                "Final video [$index] Referer: ${video.headers["Referer"]}",
+                "Final video [$index] Referer: ${video.headers?.get("Referer")}",
             )
             Log.d(
                 TAG,
-                "Final video [$index] Origin: ${video.headers["Origin"]}",
+                "Final video [$index] Origin: ${video.headers?.get("Origin")}",
             )
         }
 
