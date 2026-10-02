@@ -345,9 +345,10 @@ class Embed4MeExtractor(
             trimmed.matches(HEX_REGEX) &&
                 trimmed.length % 2 == 0 -> trimmed
 
-            else -> HEX_PAYLOAD_REGEX
-                .find(trimmed)
-                ?.value
+            else ->
+                HEX_PAYLOAD_REGEX
+                    .find(trimmed)
+                    ?.value
         } ?: run {
             Log.w(TAG, "Could not find encrypted hex payload")
             return null
@@ -431,9 +432,8 @@ class Embed4MeExtractor(
         return null
     }
 
-    private fun String.isValidPayload(): Boolean =
-        extractStreamUrl(this) != null ||
-            trim().startsWith("{")
+    private fun String.isValidPayload(): Boolean = extractStreamUrl(this) != null ||
+        trim().startsWith("{")
 
     private fun extractStreamUrl(payload: String): String? {
         SOURCE_REGEXES.forEach { regex ->
