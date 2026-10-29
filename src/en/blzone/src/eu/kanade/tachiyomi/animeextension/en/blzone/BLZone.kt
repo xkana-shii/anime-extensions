@@ -277,13 +277,6 @@ abstract class BLZone :
         } catch (_: Exception) {
             emptyList()
         }
-
-        Log.d(
-            TAG,
-            "Total resolved videos: ${resolved.size}",
-        )
-
-        return resolved
     }
 
     private suspend fun serverVideoResolver(
@@ -424,12 +417,5 @@ abstract class BLZone :
             setDefaultValue(PREF_SERVER_DEFAULT)
             summary = "%s"
         }.also(screen::addPreference)
-    }
-
-    companion object {
-        private const val PREF_SERVER_KEY = "preferred_server"
-        private const val PREF_SERVER_DEFAULT = "Filemoon"
-        private val SERVER_LIST = arrayOf("Filemoon", "StreamTape", "MixDrop", "VidGuard", "MP4", "Voe", "Byse")
-        private val EPISODE_NUMBER_REGEX = Regex("""Episode (\d+)""", RegexOption.IGNORE_CASE)
     }
 }
